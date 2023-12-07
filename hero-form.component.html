@@ -1,0 +1,21 @@
+<!-- hero-form.component.html -->
+
+<div style="text-align: center; margin-top: 50px;">
+  <h2>Number of Levels Form</h2>
+  <form (ngSubmit)="submitForm()" #levelForm="ngForm">
+    <label for="numberOfLevels">Enter the number of levels:</label>
+    <input
+      type="number"
+      id="numberOfLevels"
+      name="numberOfLevels"
+      [(ngModel)]="numberOfLevels"
+      required
+    />
+    <br />
+    <button type="submit" [disabled]="!levelForm.form.valid">Submit</button>
+  </form>
+
+  <div *ngIf="submitted">
+    <p>"Work smart " these many days for processing :33 for LEVEL: {{ numberOfLevels }}</p>
+  </div>
+</div>
